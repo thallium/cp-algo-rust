@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Segtree","Segment tree using ac-library-rs’s implementation. See this for the mathmatical  definition of functions that you need to implement."]]});

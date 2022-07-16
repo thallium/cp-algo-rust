@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["BoundedAbove",""],["BoundedBelow",""],["One","Class that has multiplicative identity element"],["Zero","Class that has additive identity element"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Integral","Corresponds to `std::is_integral` in C++."]]});
