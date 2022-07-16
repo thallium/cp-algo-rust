@@ -68,7 +68,7 @@ impl<M: Monoid> Segtree<M> {
         M::binary_operation(&sml, &smr)
     }
 
-    /// Returns op(a[0], ..., a[n - 1]), assuming the properties of the monoid. It returns e() if n = 0n=0.
+    /// Returns `op(a[0], ..., a[n - 1])`, assuming the properties of the monoid. It returns e() if n = 0.
     pub fn all_prod(&self) -> M::S {
         self.d[1].clone()
     }
