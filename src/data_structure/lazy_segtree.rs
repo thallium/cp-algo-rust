@@ -179,8 +179,7 @@ impl<F: MapMonoid> LazySegtree<F> {
             self.push(l >> i);
         }
         let mut sm = F::identity_element();
-        while {
-            // do
+        loop {
             while l % 2 == 0 {
                 l >>= 1;
             }
@@ -198,12 +197,10 @@ impl<F: MapMonoid> LazySegtree<F> {
             }
             sm = F::binary_operation(&sm, &self.d[l]);
             l += 1;
-            //while
-            {
-                let l = l as isize;
-                (l & -l) != l
+            if l & l.wrapping_neg() == l {
+                break;
             }
-        } {}
+        }
         self.n
     }
 
@@ -222,8 +219,7 @@ impl<F: MapMonoid> LazySegtree<F> {
             self.push((r - 1) >> i);
         }
         let mut sm = F::identity_element();
-        while {
-            // do
+        loop {
             r -= 1;
             while r > 1 && r % 2 != 0 {
                 r >>= 1;
@@ -241,12 +237,10 @@ impl<F: MapMonoid> LazySegtree<F> {
                 return r + 1 - self.size;
             }
             sm = F::binary_operation(&self.d[r], &sm);
-            // while
-            {
-                let r = r as isize;
-                (r & -r) != r
+            if r & r.wrapping_neg() == r {
+                break;
             }
-        } {}
+        }
         0
     }
 }
