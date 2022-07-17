@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["ex_crt","Extended Chinese Remainder Theorem. It solves systems of linear congruences equations:"],["ex_gcd","returns a solution (x, y, g) to `a * x + b * y = gcd(a, b) = g`"],["gcd",""],["lcm",""]]});
