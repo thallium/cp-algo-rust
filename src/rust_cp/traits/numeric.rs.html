@@ -102,14 +102,14 @@
             <span class="kw">impl</span> <span class="ident">BoundedBelow</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
                 <span class="attribute">#[<span class="ident">inline</span>]</span>
                 <span class="kw">fn</span> <span class="ident">min_value</span>() -&gt; <span class="self">Self</span> {
-                    <span class="ident"><span class="self">Self</span>::min_value</span>()
+                    <span class="ident"><span class="self">Self</span>::MIN</span>
                 }
             }
 
             <span class="kw">impl</span> <span class="ident">BoundedAbove</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
                 <span class="attribute">#[<span class="ident">inline</span>]</span>
                 <span class="kw">fn</span> <span class="ident">max_value</span>() -&gt; <span class="self">Self</span> {
-                    <span class="ident"><span class="self">Self</span>::max_value</span>()
+                    <span class="ident"><span class="self">Self</span>::MAX</span>
                 }
             }
 

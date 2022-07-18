@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["binary_lifting",""],["bipartite_matching",""],["heavy_light_decomp",""],["shortest_path",""],["tarjan",""]]});
+initSidebarItems({"mod":[["binary_lifting",""],["bipartite_matching",""],["heavy_light_decomp",""],["max_flow",""],["shortest_path",""],["tarjan",""]]});
