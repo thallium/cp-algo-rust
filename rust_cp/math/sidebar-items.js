@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["internal_math",""],["number_theory",""]]});
+initSidebarItems({"mod":[["factorial",""],["internal_math",""],["number_theory",""]]});

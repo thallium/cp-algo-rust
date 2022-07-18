@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["fenwick_tree",""],["lazy_segtree",""],["min_heap",""],["segtree",""],["sparse_table",""],["test",""],["union_find",""]]});
+initSidebarItems({"mod":[["fenwick_tree",""],["lazy_segtree",""],["min_heap",""],["segtree",""],["sparse_table",""],["union_find",""]]});

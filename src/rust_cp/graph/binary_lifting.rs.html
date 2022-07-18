@@ -117,19 +117,19 @@
     }
 
     <span class="doccomment">/// check if u is ancestor of v</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_anscestor</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">u</span>: <span class="ident">usize</span>, <span class="ident">v</span>: <span class="ident">usize</span>) -&gt; <span class="ident">bool</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_ancestor</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">u</span>: <span class="ident">usize</span>, <span class="ident">v</span>: <span class="ident">usize</span>) -&gt; <span class="ident">bool</span> {
         <span class="self">self</span>.<span class="ident">tin</span>[<span class="ident">v</span>] <span class="op">&gt;</span><span class="op">=</span> <span class="self">self</span>.<span class="ident">tin</span>[<span class="ident">u</span>] <span class="op">&amp;&amp;</span> <span class="self">self</span>.<span class="ident">tin</span>[<span class="ident">v</span>] <span class="op">&lt;</span> <span class="self">self</span>.<span class="ident">tout</span>[<span class="ident">u</span>]
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">lca</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="kw-2">mut</span> <span class="ident">u</span>: <span class="ident">usize</span>, <span class="ident">v</span>: <span class="ident">usize</span>) -&gt; <span class="ident">usize</span> {
-        <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_anscestor</span>(<span class="ident">u</span>, <span class="ident">v</span>) {
+        <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_ancestor</span>(<span class="ident">u</span>, <span class="ident">v</span>) {
             <span class="kw">return</span> <span class="ident">u</span>;
         }
-        <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_anscestor</span>(<span class="ident">v</span>, <span class="ident">u</span>) {
+        <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_ancestor</span>(<span class="ident">v</span>, <span class="ident">u</span>) {
             <span class="kw">return</span> <span class="ident">v</span>;
         }
         <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> (<span class="number">0</span>..<span class="self">self</span>.<span class="ident">level</span>).<span class="ident">rev</span>() {
-            <span class="kw">if</span> <span class="op">!</span><span class="self">self</span>.<span class="ident">is_anscestor</span>(<span class="self">self</span>.<span class="ident">pa</span>[<span class="ident">u</span>][<span class="ident">i</span>], <span class="ident">v</span>) {
+            <span class="kw">if</span> <span class="op">!</span><span class="self">self</span>.<span class="ident">is_ancestor</span>(<span class="self">self</span>.<span class="ident">pa</span>[<span class="ident">u</span>][<span class="ident">i</span>], <span class="ident">v</span>) {
                 <span class="ident">u</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">pa</span>[<span class="ident">u</span>][<span class="ident">i</span>];
             }
         }
