@@ -43,19 +43,19 @@ impl BinaryLifting {
     }
 
     /// check if u is ancestor of v
-    pub fn is_anscestor(&self, u: usize, v: usize) -> bool {
+    pub fn is_ancestor(&self, u: usize, v: usize) -> bool {
         self.tin[v] >= self.tin[u] && self.tin[v] < self.tout[u]
     }
 
     pub fn lca(&self, mut u: usize, v: usize) -> usize {
-        if self.is_anscestor(u, v) {
+        if self.is_ancestor(u, v) {
             return u;
         }
-        if self.is_anscestor(v, u) {
+        if self.is_ancestor(v, u) {
             return v;
         }
         for i in (0..self.level).rev() {
-            if !self.is_anscestor(self.pa[u][i], v) {
+            if !self.is_ancestor(self.pa[u][i], v) {
                 u = self.pa[u][i];
             }
         }
