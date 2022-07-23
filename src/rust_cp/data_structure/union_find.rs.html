@@ -75,7 +75,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">n</span>: <span class="ident">usize</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">UnionFind</span> {
             <span class="ident">n</span>,
-            <span class="ident">fa</span>: (<span class="number">0</span>..<span class="ident">n</span>).<span class="ident">into_iter</span>().<span class="ident">collect</span>(),
+            <span class="ident">fa</span>: (<span class="number">0</span>..<span class="ident">n</span>).<span class="ident">collect</span>(),
             <span class="ident">sz</span>: <span class="macro">vec!</span>[<span class="number">1</span>; <span class="ident">n</span>],
         }
     }
@@ -84,7 +84,7 @@
         <span class="kw">if</span> <span class="self">self</span>.<span class="ident">fa</span>[<span class="ident">i</span>] <span class="op">==</span> <span class="ident">i</span> {
             <span class="ident">i</span>
         } <span class="kw">else</span> {
-            <span class="self">self</span>.<span class="ident">fa</span>[<span class="ident">i</span>] <span class="op">=</span> <span class="self">self</span>.<span class="ident">find</span>(<span class="ident">i</span>);
+            <span class="self">self</span>.<span class="ident">fa</span>[<span class="ident">i</span>] <span class="op">=</span> <span class="self">self</span>.<span class="ident">find</span>(<span class="self">self</span>.<span class="ident">fa</span>[<span class="ident">i</span>]);
             <span class="self">self</span>.<span class="ident">fa</span>[<span class="ident">i</span>]
         }
     }
