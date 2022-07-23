@@ -8,7 +8,7 @@ impl UnionFind {
     pub fn new(n: usize) -> Self {
         UnionFind {
             n,
-            fa: (0..n).into_iter().collect(),
+            fa: (0..n).collect(),
             sz: vec![1; n],
         }
     }
@@ -17,7 +17,7 @@ impl UnionFind {
         if self.fa[i] == i {
             i
         } else {
-            self.fa[i] = self.find(i);
+            self.fa[i] = self.find(self.fa[i]);
             self.fa[i]
         }
     }
